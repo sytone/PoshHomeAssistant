@@ -1,0 +1,40 @@
+# See http://www.appveyor.com/docs/appveyor-yml for many more options
+
+# Allow WMF5 (i.e. PowerShellGallery functionality)
+os: Unstable
+
+# We can force this by adding [skip ci] or [ci skip] anywhere in commit message
+# Ignore testing a commit if only the README.md file changed
+# Or if various strings are found in the commit message: updated readme, update readme, update docs, update version, update appveyor
+skip_commits:
+  files:
+    - README.md
+  message: /updated readme.*|update readme.*s|update docs.*|update version.*|update appveyor.*/
+
+# PowerShell Gallery API key for publishing an update to the module
+# The "secure:" value is the Appveyor encryption of the key
+environment:
+  NuGetApiKey:
+    secure: qzMgvjHbItiXoQimuHYVcU9snkuFitv+bttyTSWWBcsoqTP6k58ZPHS0SXINrDUv
+  GitHubKey:
+    secure: 0uxMs+8xX0RrqiDm3PDoM2cB67G2rIkyn2FHznKmnp1u57Ox4ANDAZCfqOnys85B
+
+# Install NuGet to interact with the PowerShell Gallery
+install:
+- ps: |
+    Install-PackageProvider -Name NuGet -Force | Out-Null
+    Install-Module -Name Pester -Force
+    Install-Module -Name posh-git -Force
+    Install-Module -Name platyPS -Force
+
+build: false
+
+test_script:
+# Test with native PS version
+  - ps: . .\appveyor.pester.ps1 -Test -Finalize
+  - git config --global credential.helper store
+  - ps: Add-Content "$env:USERPROFILE\.git-credentials" "https://$($env:GitHubKey):x-oauth-basic@github.com`n"
+  - git config --global user.email "github@sytone.com"
+  - git config --global user.name "Sytone"
+  - git config --global core.autocrlf true
+  - ps: . .\build.ps1
