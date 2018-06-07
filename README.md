@@ -1,4 +1,4 @@
-[![Build status](https://ci.appveyor.com/api/projects/status/jyk4dlk7vpibwswp?svg=true)](https://ci.appveyor.com/project/sytone/powershellframemodule)
+[![Build status](https://ci.appveyor.com/api/projects/status/1cro02num081ocj7?svg=true)](https://ci.appveyor.com/project/sytone/poshhomeassistant)
 
 # PowerShell Home Assistant Module
 
