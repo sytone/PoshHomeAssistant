@@ -69,7 +69,7 @@ Description = 'Powershell module to access and control Home Assistant'
 # NestedModules = @()
 
 # Functions to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no functions to export.
-FunctionsToExport = @('Set-HomeAssistantConfiguration', 'Set-HomeAssistantSwitchState')
+FunctionsToExport = @('Set-HomeAssistantConfiguration', 'Set-HomeAssistantSwitchState', 'Test-HomeAssistantApi')
 
 # Cmdlets to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no cmdlets to export.
 CmdletsToExport = @()

@@ -13,5 +13,10 @@ function Invoke-HACommand {
 
     $restBody = $Body | ConvertTo-Json
     $uri = "$($Global:HomeAssistantConfig.BaseUrl)$Path"
-    Invoke-RestMethod -Method $Method -Uri $uri -Headers $Global:HomeAssistantConfig.Header -Body $restBody
+
+    if($Method -eq [Microsoft.PowerShell.Commands.WebRequestMethod]::Post) {
+        Invoke-RestMethod -Method $Method -Uri $uri -Headers $Global:HomeAssistantConfig.Header -Body $restBody
+    } else {
+        Invoke-RestMethod -Method $Method -Uri $uri -Headers $Global:HomeAssistantConfig.Header
+    }
 }

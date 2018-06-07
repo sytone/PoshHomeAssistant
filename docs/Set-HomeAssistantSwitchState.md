@@ -1,7 +1,7 @@
 ---
 external help file: PoshHomeAssistant-help.xml
 Module Name: PoshHomeAssistant
-online version:
+online version: 
 schema: 2.0.0
 ---
 
@@ -34,7 +34,7 @@ PS C:\> Set-HomeAssistantSwitchState -AccessKey "mysecretkey" -BaseUrl "http://1
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases:
+Aliases: 
 
 Required: False
 Position: 0
@@ -49,7 +49,7 @@ Accept wildcard characters: False
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases:
+Aliases: 
 Accepted values: On, Off
 
 Required: False
@@ -73,3 +73,4 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## NOTES
 
 ## RELATED LINKS
+
