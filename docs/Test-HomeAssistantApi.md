@@ -1,7 +1,7 @@
 ---
 external help file: PoshHomeAssistant-help.xml
 Module Name: PoshHomeAssistant
-online version: 
+online version:
 schema: 2.0.0
 ---
 
@@ -37,4 +37,3 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## NOTES
 
 ## RELATED LINKS
-
