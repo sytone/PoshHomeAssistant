@@ -94,7 +94,7 @@
     </maml:alertSet>
     <command:examples>
       <command:example>
-        <maml:title>Example 1</maml:title>
+        <maml:title>-------------------------- Example 1 --------------------------</maml:title>
         <dev:code>PS C:\&gt; Set-HomeAssistantConfiguration -AccessKey "mysecretkey" -BaseUrl "http://192.168.0.1:8321"</dev:code>
         <dev:remarks>
           <maml:para></maml:para>
@@ -201,7 +201,7 @@
     </maml:alertSet>
     <command:examples>
       <command:example>
-        <maml:title>Example 1</maml:title>
+        <maml:title>-------------------------- Example 1 --------------------------</maml:title>
         <dev:code>PS C:\&gt; Set-HomeAssistantSwitchState -AccessKey "mysecretkey" -BaseUrl "http://192.168.0.1:8321"</dev:code>
         <dev:remarks>
           <maml:para></maml:para>
