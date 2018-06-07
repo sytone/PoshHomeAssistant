@@ -1,7 +1,7 @@
 ---
 external help file: PoshHomeAssistant-help.xml
 Module Name: PoshHomeAssistant
-online version: 
+online version:
 schema: 2.0.0
 ---
 
@@ -34,7 +34,7 @@ PS C:\> Set-HomeAssistantConfiguration -AccessKey "mysecretkey" -BaseUrl "http:/
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 0
@@ -49,7 +49,7 @@ The BaseUrl Home Assistant listens on
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 1
@@ -72,4 +72,3 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## NOTES
 
 ## RELATED LINKS
-
