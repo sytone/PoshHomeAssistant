@@ -6,10 +6,13 @@ if($env:APPVEYOR_REPO_BRANCH -and $env:APPVEYOR_REPO_BRANCH -notlike "master") {
 $ModuleManifestName = 'PoshHomeAssistant.psd1'
 $ModuleManifestPath = "$PSScriptRoot\..\PoshHomeAssistant\$ModuleManifestName"
 
+
 $currentConfiguration = Join-Path -Path $env:USERPROFILE -ChildPath ".PoshHomeAssistantConfig"
 $backupConfiguration = Join-Path -Path $env:USERPROFILE -ChildPath ".PoshHomeAssistantConfig.backup"
 
-Copy-Item -Path $currentConfiguration -Destination $backupConfiguration -Force
+if((Test-Path $currentConfiguration)) {
+    Copy-Item -Path $currentConfiguration -Destination $backupConfiguration -Force
+}
 
 Describe 'Module Manifest Tests' {
     It 'Passes Test-ModuleManifest' {
@@ -31,5 +34,6 @@ Describe 'Set-Configuration' {
     }
 }
 
-
-Copy-Item -Path $backupConfiguration -Destination $currentConfiguration -Force
+if((Test-Path $backupConfiguration)) {
+    Copy-Item -Path $backupConfiguration -Destination $currentConfiguration -Force
+}
